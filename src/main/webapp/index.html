@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<h1>Bmi-Rechner</h1>
+<form method="get" action="BmiServlet">
+
+  <p>
+    <label for="gr">Größe</label>
+    <input type="text" name="groesse" step="0.1" min="1.60" max="3.00" id="gr" type="number"/>
+  </p>
+
+  <p>
+    <label for="ge">Gewicht</label>
+    <input type="text" name="gewicht" step=".1" id="ge" type="number">
+  </p>
+
+    <br>
+
+    <p>
+        <button type="submit"></button>
+    </p>
+
+<!-- http://localhost:8080/bmi_calculator_war_exploded/index.html -->
+</form>
+</body>
+</html>
