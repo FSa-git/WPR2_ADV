@@ -18,7 +18,7 @@ public class Aufrufzaehler extends HttpServlet {
         super();
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
         // Zugriff auf den Servlet-Kontext
         ServletContext context = getServletContext();
