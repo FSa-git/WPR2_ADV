@@ -20,9 +20,14 @@ public class CookieSetzer extends HttpServlet {
         // Inhalt immer String, aber sind nicht alle Inhalte erlaubt (keine Leerzeichen, Sonderzeichen)
         // Warenkorb wir im Server gespeichert und die id wird im client geschickt
 
+        keks.setMaxAge(86400); // Cookie lebt 24 Stunden
+
         out.print("<html><head><title>Cookie-Beispiel</title></head><body>");
         out.print("<h1>Cookie-Beispiel</h1>");
         out.print("<p>Ein Cookie wird bzw. wurde gesetzt.</p>");
+        // out.print("<form method=\"get\" action=\"");
+        out.print("<p><a href=\"CookieLeser\">Hier</a> gehts weiter</p>");
+        out.print("</body></html>");
         response.addCookie(keks); // Cookie wird gesetzt
         // Ablfaufdatum ist bei -1 (default) bis zum Ende der Session
         // setAge(0) löscht das Cookie..?
