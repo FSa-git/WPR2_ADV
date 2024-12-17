@@ -15,12 +15,17 @@ public class Willkommen extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         String login = request.getParameter("login");
-        if (login.equals("kessler")){
-            out.print("<html><head><title>Willkommen</title></head><body>");
-            out.print("<h1>Willkommen Herr Kessler!</h1>");
+        if (login.equals("kessler") || login.equals("thomas")) {
+//            out.print("<html><head><title>Willkommen</title></head><body>");
+//            out.print("<h1>Willkommen Herr Kessler!</h1>");
+
+            // Für Redirect
+
+            request.setAttribute("anrede","Herr"); // Zusatsinformationen, die im Parameter nicht drin steht ...
+            request.getRequestDispatcher("Startseite").forward(request, response);
         }
         else {
             response.sendRedirect("cookies2.html");
