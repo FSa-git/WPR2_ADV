@@ -5,10 +5,8 @@
     <title>Willkommen - JSP</title>
 </head>
 <body>
-<h2>Willkommen
    <h2>Willkommen
     <%= request.getParameter("id") %>
-</h2>
 </h2>
 <p>
     <a href="weiter.html">Hier</a> geht es weiter
