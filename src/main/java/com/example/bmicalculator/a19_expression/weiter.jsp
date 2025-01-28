@@ -6,6 +6,9 @@
     <title>Willkommen</title>
 </head>
 <body>
+<% if (request.getParameter("vorname").equals("Thomas")){
+    response.sendRedirect("index.jsp?fehler=ja");
+}%>
 <h3>Willkommen
 
 <% out.print(request.getParameter("vorname"));
@@ -22,6 +25,9 @@
 <%--<% session.setAttribute("vorname", request.getParameter("vorname")); %> <!--Setze den Wert des Queryparameters "eingabe" in die Session-->--%>
 <jsp:useBean id="person" class="bohne.Person" scope="session"/>
 <jsp:setProperty name="person" property="*" />
+
+<jsp:setProperty name="person" property="vorname" value="${ empty param.vorname ? 'hurz' : param.vorname}" />
+
 <p><a href="nochweiter.jsp">Hier</a> geht es weiter</p>
 <!-- Die folgende Zuweisung -->
 </body>
